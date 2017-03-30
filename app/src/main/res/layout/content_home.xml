@@ -138,7 +138,7 @@
             android:layout_marginStart="47dp"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/more"
+            android:text="@string/up"
             android:textColor="@color/blackFont"/>
 
     </GridLayout>
@@ -208,7 +208,8 @@
         android:layout_height="46dp"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="17dp">
+        android:layout_marginTop="17dp"
+        android:visibility="visible">
         <EditText
             android:inputType="text"
             android:maxLines="1"
@@ -250,6 +251,7 @@
             android:layout_marginStart="76dp"
             android:background="@drawable/btn_per_guide_form"/>
     </LinearLayout>
+    <!--三大图标导航-->
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -275,6 +277,17 @@
 
         </LinearLayout>
 
+    <!--以下为为我推荐list-->
+        <ListView
+            android:id="@+id/offer_me_list"
+            android:divider="@color/divider"
+            android:dividerHeight="1dp"
+            android:layout_width="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content">
+
+        </ListView>
 
 
 

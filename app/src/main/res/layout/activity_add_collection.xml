@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="@string/book_libs"
+        android:text="收藏图书"
         android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/lib_name"
-        android:hint="@string/edit_lib_name"
+        android:hint="输入书名"
         android:textSize="20sp"
         android:textColor="#5ABC4F"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/type_id"
-        android:hint="@string/edit_lib_type_id"
+        android:hint="输入图书类别号"
         android:textSize="15sp"
         android:textColor="#5ABC4F"
         android:gravity="center"
@@ -34,8 +34,8 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btn_add_book"
-        android:text="@string/btn_sure"
+        android:id="@+id/btn_add_collection"
+        android:text="确 定"
         android:textSize="25sp"
         android:textColor="#ffffff"
         android:gravity="center"

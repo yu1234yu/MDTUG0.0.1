@@ -15,6 +15,7 @@
     <string name="per">期刊</string>
     <string name="news">报纸</string>
     <string name="paper">学位论文</string>
+    <string name="up">收起</string>
     <string name="more">更多</string>
     <string name="search">搜 索</string>
     <string name="my_book">我的订阅</string>
@@ -27,6 +28,9 @@
     <string name="offer_for_me">为我推荐</string>
     <string name="book_guide">图书导航</string>
     <string name="per_guide">期刊导航</string>
+    <string name="book_libs">预定图书</string>
+    <string name="edit_lib_name">输入书名</string>
+    <string name="edit_lib_type_id">输入图书类别号</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity
     private GridLayout gridLayout;
     private LinearLayout linear_tag;
     private ImageView up;
-    private Button menu_6,menu_1,menu_2,menu_3,menu_4,menu_5;
+    private Button menu_6;
     private boolean isButton=true;
 
     @Override

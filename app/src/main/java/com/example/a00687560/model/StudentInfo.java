@@ -22,6 +22,7 @@ public class StudentInfo extends DataSupport {
 
     private List<LibsType> LibsTypeList = new ArrayList<LibsType>();
     private List<LibsInfo> LibsInfotList = new ArrayList<LibsInfo>();
+    private List<LibsCollection> LibsCollectionList = new ArrayList<LibsCollection>();
     private List<SearchHistory> SearchHistoryList = new ArrayList<SearchHistory>();
 
     public int getId() {
@@ -93,8 +94,18 @@ public class StudentInfo extends DataSupport {
         return SearchHistoryList;
     }
 
+    public List<LibsCollection> getLibsCollectionList() {
+        return LibsCollectionList;
+    }
+
+    public void setLibsCollectionList(List<LibsCollection> libsCollectionList) {
+        LibsCollectionList = libsCollectionList;
+    }
+
     public void setSearchHistoryList(List<SearchHistory> searchHistoryList) {
         SearchHistoryList = searchHistoryList;
+
+
     }
 
 }

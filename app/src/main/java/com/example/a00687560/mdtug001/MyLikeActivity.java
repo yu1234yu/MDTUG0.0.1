@@ -2,6 +2,8 @@ package com.example.a00687560.mdtug001;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 public class MyLikeActivity extends AppCompatActivity {
 
@@ -9,5 +11,19 @@ public class MyLikeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_like);
+
+    //返回上级界面
+        Toolbar toolbar =(Toolbar) findViewById(R.id.for_password_toolbar);
+        setSupportActionBar(toolbar);
+        //后台设置ToolBar的图标，传递给对象toolbar
+        toolbar.setNavigationIcon(R.drawable.btn_back);
+        //让原始toolBar的title不显示。
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                onBackPressed();
+            }
+        });
+
     }
 }

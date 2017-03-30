@@ -25,7 +25,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
 
     @Override
     public void onBindViewHolder(VH holder, int position) {
-        holder.mTextView.setText(libsInfoList.get(position),0);
+        holder.mTextView.setText(libsInfoList.get(position).getLib_name());
     }
 
     @Override

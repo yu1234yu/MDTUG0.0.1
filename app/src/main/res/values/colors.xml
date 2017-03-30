@@ -9,4 +9,5 @@
     <color name="hintWords">#a7a9aa</color>
     <color name="grey">#646464</color>
     <color name="blackFont">#616161</color>
+    <color name="divider">#CfDfDf</color>
 </resources>

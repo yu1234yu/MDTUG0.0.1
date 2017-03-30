@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -32,6 +33,21 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_book);
 
+        //返回上级界面
+        Toolbar toolbar =(Toolbar) findViewById(R.id.for_password_toolbar);
+        setSupportActionBar(toolbar);
+
+        //后台设置ToolBar的图标，传递给对象toolbar
+        toolbar.setNavigationIcon(R.drawable.btn_back);
+        //让原始toolBar的title不显示。
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                onBackPressed();
+            }
+        });
+
+  //设置RcycleView属性
         mRecyclerView =(RecyclerView)findViewById(R.id.my_book_recycler_view);
         //以下，如果可以确定每个Item的高度是固定的，设置这个选项可以提高性能
         mRecyclerView.setHasFixedSize(true);
@@ -54,7 +70,7 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
-    //点击删除按钮监听
+    //点击 添加 按钮监听
     public void onClick(View v){
                 //普通存储
                 Intent i = new Intent(MyBookActivity.this, AddBookActivity.class);
