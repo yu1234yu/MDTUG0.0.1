@@ -17,10 +17,10 @@ import java.util.List;
 
 public class AddBookActivity extends Activity implements View.OnClickListener{
 
-    private EditText etLibName,etTypeId;
+    private EditText etLibId,etLibName,etTypeId;
     private Button btnAdd;
     private Intent intent;
-    private int str_type_id;
+    private int str_lib_id,str_type_id;
     private String str_lib_name;
 
     @Override
@@ -28,14 +28,16 @@ public class AddBookActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
 
+        etLibId=(EditText)findViewById(R.id.lib_id);
         etLibName= (EditText) findViewById(R.id.lib_name);
         etTypeId= (EditText) findViewById(R.id.type_id);
         btnAdd= (Button) findViewById(R.id.btn_add_book);
 
 
         //获取输入框的值
-         str_lib_name=etLibName.getText().toString();
-         str_type_id=etTypeId.getId();
+        str_lib_id=etLibId.getId();
+        str_lib_name=etLibName.getText().toString();
+        str_type_id=etTypeId.getId();
         btnAdd.setOnClickListener(this);
         //获取传递过来的intent
         intent=getIntent();
@@ -44,6 +46,7 @@ public class AddBookActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         LibsInfo libsInfo = new LibsInfo();
+            libsInfo.setId(str_lib_id);
             libsInfo.setLib_name( str_lib_name);
             libsInfo.setType_id(str_type_id);
             boolean ifSaveSuccess = libsInfo.save();
@@ -55,6 +58,7 @@ public class AddBookActivity extends Activity implements View.OnClickListener{
             }
         setResult(RESULT_OK, intent);
         finish();
+        startActivity(new Intent(AddBookActivity.this,MyBookActivity.class));
         }
     }
 

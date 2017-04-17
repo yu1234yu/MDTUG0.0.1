@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context="com.example.a00687560.mdtug001.MyBookActivity">
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/home_toolbar"
+        android:id="@+id/my_book_toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:elevation="4dp"
@@ -24,35 +24,29 @@
             android:text="@string/my_book"/>
     </android.support.v7.widget.Toolbar>
 
+
+    <Button
+            android:id="@+id/btn_add"
+            android:text="@string/add"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_book_recycler_view"
+        android:layout="@layout/list_view_book_item"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="1dp"
-        android:divider="@color/divider"/>
-
-
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:layout_marginTop="3dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btn_add"
-            android:text="添 加"
-            android:textSize="25sp"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:layout_marginRight="5dp"
-            android:background="@color/colorPrimary"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="45dp" />
-    </LinearLayout>
+        android:divider="@color/divider"
+        android:layout_below="@+id/my_book_toolbar"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

@@ -4,14 +4,19 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="@string/book_libs"
-        android:layout_marginBottom="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/libs_image"
         android:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/lib_id"
+        android:inputType="number"
+        android:hint="@string/edit_lib_id"
+        android:textSize="15sp"
+        android:textColor="#5ABC4F"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditText
@@ -25,6 +30,7 @@
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/type_id"
+        android:inputType="number"
         android:hint="@string/edit_lib_type_id"
         android:textSize="15sp"
         android:textColor="#5ABC4F"

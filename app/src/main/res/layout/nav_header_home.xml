@@ -21,7 +21,6 @@
         android:layout_marginTop="65dp"
         android:layout_marginStart="30dp"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        android:text="131144"/>
+        android:textSize="20sp" />
 
 </LinearLayout>

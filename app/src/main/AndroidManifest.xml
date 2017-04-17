@@ -24,14 +24,14 @@
         <activity android:name=".ForgotPassword1Activity" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".MyBookActivity" />
         <activity android:name=".MyCollectionActivity" />
         <activity android:name=".MyLikeActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".AddBookActivity" />
-        <activity android:name=".AddCollectionActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

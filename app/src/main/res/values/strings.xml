@@ -28,14 +28,16 @@
     <string name="offer_for_me">为我推荐</string>
     <string name="book_guide">图书导航</string>
     <string name="per_guide">期刊导航</string>
-    <string name="book_libs">预定图书</string>
+    <string name="edit_lib_id">输入图书号</string>
     <string name="edit_lib_name">输入书名</string>
     <string name="edit_lib_type_id">输入图书类别号</string>
+    <string name="add">添 加</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="_14sp">14sp</string>
 
 </resources>

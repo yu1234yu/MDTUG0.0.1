@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.a00687560.adapter.MyCollectionAdapter;
 import com.example.a00687560.model.LibsCollection;
-import com.example.a00687560.model.LibsInfo;
 
 import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
@@ -32,7 +32,7 @@ public class MyCollectionActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_my_collection);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.for_password_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.my_collection_toolbar);
         setSupportActionBar(toolbar);
 
         //后台设置ToolBar的图标，传递给对象toolbar
