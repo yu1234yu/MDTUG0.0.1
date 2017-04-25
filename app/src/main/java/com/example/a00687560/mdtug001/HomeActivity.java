@@ -1,13 +1,8 @@
 package com.example.a00687560.mdtug001;
 
-import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.content.res.ColorStateList;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,9 +19,16 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import static android.R.attr.id;
+import com.example.a00687560.adapter.OfferAdapter;
+import com.example.a00687560.model.LibsOffer;
+
+import org.litepal.crud.DataSupport;
+import org.litepal.tablemanager.Connector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,16 +40,23 @@ public class HomeActivity extends AppCompatActivity
     private boolean isButton=true;
     private EditText search_edit_text;
     private RadioGroup rgMain;
+    private ListView offerList;
+    private List<LibsOffer> LibsOfferList;
+    private OfferAdapter Adapter;
     private RadioButton rbRecommend, rbBook, rbMagazine;
     private ListView mlistcontentview;
     private LinearLayout mhinderview;
     private float mFirstY,mCurrentY,mTouchSlop=0;
+    private List<List<String>> mList = new ArrayList<List<String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //创建数据库
+        SQLiteDatabase db= Connector.getDatabase();
+        saveOfferBook();
 
         /**
          * 以下为滑动侧菜单效果
@@ -120,7 +129,8 @@ public class HomeActivity extends AppCompatActivity
         rbMagazine = (RadioButton) findViewById(R.id.rbMagazine);
         rgMain.check(R.id.rbRecommend);//默认选中 为我推荐
 
-
+        offerList=(ListView)findViewById(R.id.offer_me_list);
+        getAllOffer();//获取全部推荐图书
 
 /**
  * 为list添加手势监听
@@ -148,6 +158,55 @@ public class HomeActivity extends AppCompatActivity
         }
     });
  */
+    }
+
+    /**
+     * 事先存储一些推荐信息进入数据库
+     */
+
+    private void saveOfferBook(){
+        for (int i=0;i<8;i++){
+            LibsOffer libsOffer=new LibsOffer(i,1,1,"11122432","Effective Java","Joshua Bloch");
+            libsOffer.save();
+        }
+    }
+
+
+
+    /**
+    获取全部推荐图书 方法
+     */
+    private void getAllOffer(){
+        List<LibsOffer> all= DataSupport.findAll(LibsOffer.class);
+        if (all!=null && all.size()>0){
+            LibsOfferList=all;
+            displayDataFromDB();
+            Adapter.notifyDataSetChanged();
+        }else{
+            Toast.makeText(this,"没找到推荐内容",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void displayDataFromDB(){
+        mList.clear();
+        List<String> columnList= new ArrayList<String>();
+        columnList.add("book_name");
+        columnList.add("book_author");
+        columnList.add("book_id");
+        mList.add(columnList);
+        if (LibsOfferList!=null&& LibsOfferList.size()>0){
+            for (int i=0;i<LibsOfferList.size();i++){
+                LibsOffer offer=LibsOfferList.get(i);
+                List<String> stringList=new ArrayList<String>();
+                stringList.add(String.valueOf(offer.getId()));
+                stringList.add(offer.getBook_name());
+                stringList.add(offer.getBook_author());
+                stringList.add(offer.getBook_id());
+                mList.add(stringList);
+            }
+            Adapter = new OfferAdapter(HomeActivity.this, LibsOfferList);
+            offerList.setAdapter(Adapter);
+        }
     }
 
     @Override

@@ -2,18 +2,12 @@ package com.example.a00687560.mdtug001;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.a00687560.model.LibsInfo;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddBookActivity extends Activity implements View.OnClickListener{
 

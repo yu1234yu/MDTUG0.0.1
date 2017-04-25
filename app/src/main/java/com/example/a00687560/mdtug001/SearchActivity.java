@@ -73,7 +73,7 @@ public class SearchActivity extends AppCompatActivity {
                         queryData("");
                     }
                     // TODO 根据输入的内容模糊查询商品，并跳转到另一个界面，由你自己去实现
-                    Toast.makeText(SearchActivity.this, "模糊查询，并跳转页面", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(SearchActivity.this, "模糊查询，并跳转页面", Toast.LENGTH_SHORT).show();
 
                 }
                 return false;
@@ -125,7 +125,7 @@ public class SearchActivity extends AppCompatActivity {
      */
     private void insertData(String tempName) {
         db = helper.getWritableDatabase();
-        db.execSQL("insert into SearchHistory(search_name) values('" + tempName + "')");
+        db.execSQL("insert into records(name) values('" + tempName + "')");
         db.close();
     }
 
@@ -134,9 +134,9 @@ public class SearchActivity extends AppCompatActivity {
      */
     private void queryData(String tempName) {
         Cursor cursor = helper.getReadableDatabase().rawQuery(
-                "select id as _id,search_name from SearchHistory where search_name like '%" + tempName + "%' order by id desc ", null);
+                "select id as _id,name from records where name like '%" + tempName + "%' order by id desc ", null);
         // 创建adapter适配器对象
-        BaseAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, new String[]{"search_name"},
+        BaseAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, new String[]{"name"},
                 new int[]{android.R.id.text1}, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         // 设置适配器
         listView.setAdapter(adapter);
@@ -147,7 +147,7 @@ public class SearchActivity extends AppCompatActivity {
      */
     private boolean hasData(String tempName) {
         Cursor cursor = helper.getReadableDatabase().rawQuery(
-                "select id as _id,search_name from SearchHistory where search_name =?", new String[]{tempName});
+                "select id as _id,name from records where name =?", new String[]{tempName});
         //判断是否有下一个
         return cursor.moveToNext();
     }
@@ -157,7 +157,7 @@ public class SearchActivity extends AppCompatActivity {
      */
     private void deleteData() {
         db = helper.getWritableDatabase();
-        db.execSQL("delete from SearchHistory");
+        db.execSQL("delete from records");
         db.close();
     }
 

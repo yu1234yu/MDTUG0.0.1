@@ -285,8 +285,8 @@
             android:layout_width="300dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:layout="@layout/list_view_offer_me_item">
         </ListView>
 
 

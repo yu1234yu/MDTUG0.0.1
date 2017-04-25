@@ -35,9 +35,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
         return libsInfoList.size();
     }
 
-    public static class VH extends RecyclerView.ViewHolder {
+    static class VH extends RecyclerView.ViewHolder {
         TextView mTextView;
-        public VH(View itemView) {
+        VH(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.book_name);
 

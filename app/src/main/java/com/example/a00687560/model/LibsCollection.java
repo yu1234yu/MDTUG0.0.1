@@ -2,19 +2,13 @@ package com.example.a00687560.model;
 
 import org.litepal.crud.DataSupport;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by 00687560 on 2017/3/30.
- */
 
 public class LibsCollection extends DataSupport {
     private int id;
+    private int lib_id;
     private String lib_name;
     private int type_id;
-    private LibsCollection libsCollection;
-    private List<StudentInfo> StudentInfoList = new ArrayList<StudentInfo>();
+
 
     public int getId() {
         return id;
@@ -22,6 +16,14 @@ public class LibsCollection extends DataSupport {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getLib_id() {
+        return lib_id;
+    }
+
+    public void setLib_id(int lib_id) {
+        this.lib_id = lib_id;
     }
 
     public String getLib_name() {
@@ -38,21 +40,5 @@ public class LibsCollection extends DataSupport {
 
     public void setType_id(int type_id) {
         this.type_id = type_id;
-    }
-
-    public LibsCollection getLibsCollection() {
-        return libsCollection;
-    }
-
-    public void setLibsCollection(LibsCollection libsCollection) {
-        this.libsCollection = libsCollection;
-    }
-
-    public List<StudentInfo> getStudentInfoList() {
-        return StudentInfoList;
-    }
-
-    public void setStudentInfoList(List<StudentInfo> studentInfoList) {
-        StudentInfoList = studentInfoList;
     }
 }

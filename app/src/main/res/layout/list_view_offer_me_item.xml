@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/ilb_ISBN"
+        android:id="@+id/lib_ISBN"
         android:layout_toRightOf="@+id/img_book"
         android:layout_below="@+id/lib_author"
         android:text="ISBN"

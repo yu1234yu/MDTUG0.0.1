@@ -32,6 +32,8 @@
     <string name="edit_lib_name">输入书名</string>
     <string name="edit_lib_type_id">输入图书类别号</string>
     <string name="add">添 加</string>
+    <string name="clear_search">清除搜索历史</string>
+    <string name="edit_search">输入查询的关键字</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

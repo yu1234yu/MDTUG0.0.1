@@ -8,9 +8,7 @@ import java.util.List;
 
 import static com.example.a00687560.mdtug001.R.id.user_id;
 
-/**
- * Created by 00687560 on 2017/3/27.
- */
+
 
 public class StudentInfo extends DataSupport {
     private int id;

@@ -59,7 +59,7 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
         mRecyclerView = (RecyclerView) findViewById(R.id.my_book_recycler_view);
         //以下，如果可以确定每个Item的高度是固定的，设置这个选项可以提高性能
         mRecyclerView.setHasFixedSize(true);
-        //以下，创建默认的线性LayoutManager
+        //以下，创建默认的线性LayoutMan5ager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
@@ -77,7 +77,6 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
         List<LibsInfo> all = DataSupport.findAll(LibsInfo.class);
         if (all != null && all.size() > 0){
             LibsInFoList=all;
-
             populateDataFromDB();
             Adapter.notifyDataSetChanged();
 
@@ -138,12 +137,6 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
                     Toast.makeText(this,"添加成功",Toast.LENGTH_SHORT).show();
                 break;
         }
-        /**
-         * 如果这里仅仅使用adapter.notifyDataSetChanged()是不会刷新界面ListView的，
-         * 因为此时adapter中传入的studentList并没有给刷新，即adapter也没有被刷新，所以你可以
-         * 重新获取studentList后再改变adapter，我这里通过调用onCreate()重新刷新了整个界面
-         */
-
 
         /**
          * 先判空，再设置适配器，避免出现空指针异常

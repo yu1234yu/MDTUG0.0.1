@@ -1,22 +1,17 @@
 package com.example.a00687560.model;
 
 import org.litepal.crud.DataSupport;
-import org.w3c.dom.Text;
-
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by 00687560 on 2017/3/27.
- */
 
 public class LibsInfo extends DataSupport {
     private int id;
     private String lib_name;
     private int type_id;
     private LibsInfo libsInfo;
-    private List<StudentInfo> StudentInfoList = new ArrayList<StudentInfo>();
+    private List<StudentInfo> StudentInfoList = new ArrayList<>();
+
+
     public int getId() {
         return id;
     }
